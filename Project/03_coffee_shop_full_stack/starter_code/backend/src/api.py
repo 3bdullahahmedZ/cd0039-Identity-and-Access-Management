@@ -115,7 +115,9 @@ def edit_drinks(jwt, id):
     if recipe != 'null':
         drink.recipe = recipe
     drink.update()
-    return jsonify({"success": True, "drinks": [drink.long()]}, 200)
+    drinks = []
+    drinks.append(drink.long())
+    return jsonify({"success": True, "drinks": drinks}, 200)
 
 
 '''
